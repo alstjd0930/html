@@ -4,12 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
+    <link href="./resources/css/reset.css">
+    <style>
+        button{
+            background-color: aqua; /* input타입의 버튼은 색x */
+        }
+        button[type=button]{
+            background-color: bisque;
+        }
+        /*  *{         
+            background-color: aquamarine;
+        } */
+        #id_1{
+            background-color: antiquewhite;
+            border: 3px solid blue;
+        }
+        .c_red{
+            color: red;
+        }
+        [class^=s]{
+            color: antiquewhite;
+        }
+
+        div > form{
+            background-color: yellowgreen;
+        }
+       
+            /* p태그이면서 class "c red"인 선택자  p.c_red{}*/
+       
+        [data-abc],[secited],[checked]{
+            color: rgb(126, 21, 21);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div><img width="50" height="50" src="./resources/images/다운로드2.jpg"></div>
-        <div>
+    <div data-abc="테스트">data abc</div>
+        <div><p style="color: beige; background-color: aqua;">로렘 입숨로렘</p></div>
+        <div><img width="50" height="50" src="./resources/images/다운로드.png"></div>
+        <div id="id_1" class="c_red">
             <form action="./0619_search.html" method="get">
+                <input type="text" list="lis_id" name="optprice">
+                <datalist id="lis_id">
+                    <option value="1000" label="추가1000원">xs</option>
+                    <option value="1500">S</option>
+                    <option value="2000">M</option>
+                </datalist>
+                <!-- ?optprice=1000 -->
+                <input type="url" name="url" value="http://" required><!-- required: 입력란에 반드시 작성하여야 submit넘어감 -->
+                <input type="search" name="search">
                 <input type="text" name="word">
                 <button type="submit">텍스트</button>
                 <input type="submit">
