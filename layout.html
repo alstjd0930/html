@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./resources/css/reset.css" rel="stylesheet">
+    <style>
+        div{
+            background-color: white;
+            border: 1px solid black;
+            
+        }
+        /* fix : 스크롤해도 고정되는 해당 위치에 고정 */
+        #id2{               
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            width: 100px;
+            z-index: 9999;
+         }
+
+         #id3{
+            position: relative;
+/*          나의 자식 후손 중에 absolute가 있다면 
+            absolute인 요소의 높이만큼을 height로 지정해줘야함
+            absolute는 주로 logo,img등 고정크기가 있는 요소들로 지정함*/
+            height: 600px;
+        }
+            /* id가 id3인 태그의 자손인 첫번째 p태그 */
+            /* absolute: 자유롭게 배치 / top,bottom등 위치지정과 함께 사용 */
+         #id3 > p:first-child{
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 100px;
+            background-color: aqua;
+         }
+         #id3 > p:nth-child(2){
+            position: absolute;
+            top: 30px;
+            left: 500px;
+            width: 100px;
+            background-color: aquamarine;
+         }
+         #id3 > p:last-child{
+            position: absolute;
+            top: 100px;
+            right: 5px;
+            width: 100px;
+            background-color: blue;
+         }
+         #id5{
+            position: relative;
+            top: 10px;
+            left: 10px;
+            
+         }
+         /* overflow: hidden 나의 자식요소들의 크기를 계산해주는것 (자식 요소중
+            float로 지정한 것을 계산해줌)*/
+            
+         #id8{
+            overflow: hidden;
+            padding: 20px;
+         }
+         /* float : 해당 위치로 정렬 */
+         #id8 p{
+            /* float 배치 설정한다면
+            부모태그에 overflow : hidden 추가 */
+            border: 1px solid  black;
+            width: 200px;
+            float: left ;
+         }  
+         #id9{
+            padding: 20px;
+            clear: both;
+            overflow: hidden;
+         }
+         #id9 p:first-child{
+            float: left;
+            width: 200px;
+            border: 1px solid blue;
+         }
+        nav > ul  li{
+            /* inline태그는 세로위치 안먹음 > inline을 block으로 변환 */
+            display: inline-block;
+            
+            
+        }
+        nav > ul  li:first-of-type{
+            padding-left: 50px;
+        }
+        nav > ul  li:last-of-type{
+            padding-right: 50px;
+        }
+        a{
+            display:inline-block ;
+            padding: 10px 10px;
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: red;
+            color: aqua;
+           
+        }
+        a:link{
+            color: antiquewhite;
+        }
+        a:visited{
+            color: pink;
+        }
+        a:active{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#a">메뉴1</a></li>
+            <li>|</li>
+            <li>메뉴2</li>
+            <li>|</li>
+            <li>메뉴3</li>
+        </ul>
+    </nav>
+    <div id="id1" >
+        <p>1111Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>1111Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>1111Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>1111Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>1111Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>1111Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        </div>
+    <div id="id2">
+        <p>2222Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+    </div>
+    <div id="id3">
+        <p>3333Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>1111Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>1111Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        </div>
+    <div id="id4">
+        <p>4444Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+    </div>
+    <div id="id5">
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+    </div>
+    <div id="id8">
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum
+            et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum
+            et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum
+            et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum
+            et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+    
+    </div>
+    <div id="id9">
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum
+            et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum
+            et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum
+            et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+        <p>5555Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut sequi, voluptas sit nobis eum. Fuga illum
+            et
+            officiis incidunt architecto eligendi, non consectetur ullam voluptas, quae cupiditate vel impedit.</p>
+    </div>
+</body>
+</html>
