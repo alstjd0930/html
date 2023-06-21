@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="result.html" method="get"> 
+        <fieldset style="display: inline-block;">
+        <table>
+            <tbody> 
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>회원여부</td>
+                    <td><input type="radio" name="act"><label>회원</label>
+                    <input type="radio" name="act"><label>비회원</label></td>
+                    
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>취미(중복선택)</td>
+                    <td><input type="checkbox" name="a">독서
+                    <input type="checkbox" name="a">영화
+                    <input type="checkbox" name="a">음악
+                    <input type="checkbox" name="a">스포츠</td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                    <td>직업</td>
+                    <td >
+                        <select>
+                            <option value="29">학생</option>
+                            <option value="30">회사원</option>
+                            <option value="31">교사</option>
+                            <option value="32">자영업</option>
+                        </select>
+
+                    <td></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="memo">남기고 싶은말 :</label>
+                </tr>
+                <tr>
+                    <td colspan="6"><textarea id="memo" cols="70" rows="5" placeholder="150자 내외로 글을 남겨주세요"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="reset">초기화</button>
+        <button type="submit">전송</button>
+    </fieldset>
+    </form>
+</body>
+</html>
