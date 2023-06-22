@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 0. 화면에 사용되는 공통(색상,폰트,ul,table등 style지정) reset.css
+                위의 margin처럼 생성시 만들어야되는 요소 */
+        ul{
+            list-style: none;
+        }
+        /* 1. boby의 자식들 layout 위치잡기 */
+        /* 2. header layout잡기*/
+        header > div.logo{
+            float: left;
+        }
+        header > div.menu{
+            text-align: center;
+            float: right;
+        }
+        /* float 사용시 부모태그에 overflow로 계산 */
+        header{
+            overflow: hidden;
+        }
+        /* float 사용시 바로밑은 clear: both; 필수(세트) */
+        nav{
+            clear: both;
+        }
+        /* 2. nav의 자식*/
+        nav li{
+            float: left;
+            width: 15%;  /* 15%간격 */
+        }
+        nav > ul{
+            overflow: hidden;           
+        }
+        li:first-of-type{
+            margin-left: 5%;
+        }
+        /* section 크기 */
+        section{
+            height: 500px;
+            background-color: #999;
+        }
+        footer{
+            height: 50px;
+            background-color: #ccc;
+            line-height: 50px;      /*텍스트 높이를 가운데로*/
+            text-align: center;     /*텍스트를 가운데로*/
+        }
+        a{
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            /*메뉴 글씨 뿐만아니라 그 주변공간 또한 선택가능*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="App">
+            <div id="wrap" class="warp_partner">
+                <div id="content">
+                   <header width="100%" id="header" class="sc-gLLvby dEzzaX sc-fHekdT idEnbl" ></header>
+                   <div class="inner">
+                        <h1 class="logo">
+                            <a href="#">
+                                <img src="#" alt="#">
+                            </a>
+                        </h1>
+                        <ul class="menu-list">
+                            <li class="list-item depth">
+                                <a href="#"></a>
+                                <span>소개</span>
+                                <ul class="depth-view">
+                                    <li class="">
+                                        <a href="#"></a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -15,11 +15,11 @@
         <fieldset>
             <legend>납품자정보</legend>
             <ol>
-                <li>납품자명: <input type="text" id="per" placeholder="name"></li>
+                <li>납품자명: <input type="text" id="per" placeholder="name" required></li>
                 <br>
-                <li>email: <input type="email" id="mail" placeholder="answs@naver.com"></li>
+                <li>email: <input type="email" id="mail" placeholder="answs@naver.com" required></li>
                 <br>
-                <li>홈페이지 :<input type="url" id="url" placeholder="http://"></li>
+                <li>홈페이지 :<input type="url" id="url" placeholder="http://" required></li>
             </ol>
         </fieldset>
         <fieldset>
@@ -32,10 +32,9 @@
                         <option value="catchicken">고양이치킨</option>
                         <option value="milk">우유</option>
                     </datalist>
-                    </datalist>
                 </li>
                 <br>
-                <li>납품수량: <input type="number" id="num" placeholder="최소100"></li>
+                <li>납품수량: <input type="number" id="num" step="10" min="10" max="100" placeholder="최소100"></li>
                 <br>
                 <li>납품등급 :<input type="range" id="range" step="2" min="0" max="10"></li>
             </ul>

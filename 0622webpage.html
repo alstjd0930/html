@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./resources/css/reset.css" rel="stylesheet">
+    <style>
+        /* 1.해상도- 최적의 해상도1250px 결정
+        2. content영역 1040px 80vw 90% 배치(중앙,왼쪽정렬)
+        3. reset.css경로 
+        4. 기본색상 10~15개 정도 class만들어놓기
+        5. 폰트크기 5~7개 미리 css에 작성(부트스트랩으로 대체가능)  
+        6.layout  */    
+        .wrap{
+            box-sizing: border-box;
+        }
+        .wrap.header{
+            border: 1px solid black;
+            background-color: bisque;
+        }
+        .wrap.content{
+            border: 1px solid black;
+            background-color: beige;
+        }
+        .wrap.footer{
+            border: 1px solid black;
+            background-color: bisque;
+        }
+        header, #content,footer{
+            border: 1px solid black;
+            width: 80vw;
+            margin: 0 auto; /* 80퍼 정도 차지 ,부모태그 기준으로 중앙정렬*/
+        }
+        /* section과 aside 둘로 나누기 */
+        #content{
+            overflow: hidden;
+        }
+        section{
+            float: left;
+            width: 80%;
+        }
+        aside{
+            float: right;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap header">
+        <header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
+                numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
+                a iste?</p>
+        </header>
+    </div>
+    <div class="wrap content">
+        <div id="content">
+            <section>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
+                    numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
+                    a iste?</p>
+            </section>
+            <aside>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
+                    numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
+                    a iste?</p>
+            </aside>
+        </div>
+    </div>
+    <div class="wrap footer">
+        <footer>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
+                numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
+                a iste?</p>
+        </footer>
+    </div>
+</body>
+</html>
