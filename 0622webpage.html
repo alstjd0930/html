@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,35 @@
     <link href="./resources/css/reset.css" rel="stylesheet">
     <style>
         /* header style 영역 */
-        header ul{
+        header ul {
             overflow: hidden;
         }
-        header ul>li{
+
+        header ul>li {
             float: left;
-        }     
-        header{
+        }
+
+        header {
             position: relative;
             height: 90px;
         }
-        header > .logo{  
-            position: absolute;left: 0;
+
+        header>.logo {
+            position: absolute;
+            left: 0;
             top: 20px;
         }
-        header > .top-menu{
+
+        header>.top-menu {
             position: absolute;
-            right: 5px; top: px;
+            right: 5px;
+            top: px;
         }
-        header > .main-menu{
+
+        header>.main-menu {
             position: absolute;
             bottom: 0;
-            right: 5px; 
+            right: 5px;
         }
     </style>
     <style>
@@ -36,28 +44,36 @@
     </style>
     <style>
         /* aside영역 */
-        aside{
+        aside {
             margin-top: 10px;
-            margin-right:10px ;
+            
         }
-        aside > input[type=radio]{
-            display: none;   /*type이 radio인것 디스플레이 없앰, visibility: hidden; 공간만 차지하되 텍스트는x */
+
+        aside>input[type=radio] {
+            display: none;
+            /*type이 radio인것 디스플레이 없앰, visibility: hidden; 공간만 차지하되 텍스트는x */
             /* visibility: hidden; */
         }
-        .items .tab-item{
+
+        .items .tab-item {
             display: none;
         }
-        aside > input[type=radio]:nth-of-type(1):checked ~ .items .tab-item:nth-of-type(1){
+
+        aside>input[type=radio]:nth-of-type(1):checked~.items .tab-item:nth-of-type(1) {
             display: block;
         }
-        aside > input[type=radio]:nth-of-type(2):checked ~ .items .tab-item:nth-of-type(2){
+
+        aside>input[type=radio]:nth-of-type(2):checked~.items .tab-item:nth-of-type(2) {
             display: block;
         }
-        aside .labels{
+
+        aside .labels {
             outline: hidden;
         }
-        aside .labels > label {
-            box-sizing: border-box;     /*  */
+
+        aside .labels>label {
+            box-sizing: border-box;
+            /*  */
             border: 1px solid black;
             width: 50%;
             display: block;
@@ -65,22 +81,36 @@
             background-color: black;
             color: white;
             text-align: center;
-            height: 30px;line-height: 30px; /* 가운데정렬 */
+            height: 30px;
+            line-height: 30px;
+            /* 가운데정렬 */
         }
-        aside > input[type=radio]:nth-of-type(1):checked ~ .labels > label:nth-of-type(1){ 
-            background-color:white ;
+
+        aside>input[type=radio]:nth-of-type(1):checked~.labels>label:nth-of-type(1) {
+            background-color: white;
             color: black;
         }
-        aside > input[type=radio]:nth-of-type(2):checked ~ .labels > label:nth-of-type(2){ 
-            background-color:white ;
+
+        aside>input[type=radio]:nth-of-type(2):checked~.labels>label:nth-of-type(2) {
+            background-color: white;
             color: black;
         }
-        aside .items li{
+
+        aside .items li {
             /* border-bottom: 1px solid black;        2줄식합쳐져서 보임, 보더 해당위치에만 라인
             border-left: 1px solid black;
             border-right: 1px solid black; */
-            border: 1px solid black;        /* 보더 1px씩 주고 top부분만 없애기 */
-            border-top:0 ;
+            border: 1px solid black;
+            /* 보더 1px씩 주고 top부분만 없애기 */
+            border-top: 0;
+            padding: 5px;
+    
+        }
+        aside .items li {
+            overflow: hidden;
+        }
+        aside .items li > a >div{
+            float: left;
         }
     </style>
     <style>
@@ -99,55 +129,67 @@
         margin
         border
 
-        */    
+        */
 
-        .wrap{
+       /*  .wrap {
             box-sizing: border-box;
-        }
-        .wrap.header{
-            border: 1px solid black;
+        } */
+
+        .wrap.header {
+            
             background-color: bisque;
         }
-        .wrap.content{
-            border: 1px solid black;
+
+        .wrap.content {
+            
             background-color: beige;
         }
-        .wrap.footer{
-            border: 1px solid black;
+
+        .wrap.footer {
+            
             background-color: bisque;
         }
-        header, #content, footer{
-            border: 1px solid black;
-            box-sizing: border-box;
+
+        header,
+        #content,
+        footer {
             
+            box-sizing: border-box;
+
             width: 600px;
-            margin: 0 auto; /* 80퍼 정도 차지 ,부모태그 기준으로 중앙정렬*/
+            margin: 0 auto;
+            /* 80퍼 정도 차지 ,부모태그 기준으로 중앙정렬*/
         }
+
         /* section과 aside 둘로 나누기 */
-        #content{
+        #content {
             overflow: hidden;
         }
-        section{
+
+        section {
             float: left;
             width: 394px;
         }
-        aside{
+
+        aside {
             float: right;
             width: 194px;
         }
-        article{
+
+        article {
             padding: 5PX;
             border: 1px solid black;
             margin: 10px 10px 10px 0px;
         }
-        
     </style>
 </head>
+
 <body>
     <div class="wrap header">
         <header>
             <div class="logo">
-                <img src="https://dummyimage.com/50x50/f20cf2/1523eb.jpg&text=hi" width="50" height="50"></div>
+                <img src="https://dummyimage.com/50x50/f20cf2/1523eb.jpg&text=hi" width="50" height="50">
+            </div>
             <div class="top-menu">
                 <ul>
                     <li>상단메뉴</li>
@@ -168,50 +210,102 @@
         <div id="content">
             <section>
                 <article>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
-                    numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
-                    a iste?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae
+                        soluta
+                        numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor
+                        at vero
+                        a iste?</p>
                 </article>
                 <article>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
-                    numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
-                    a iste?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae
+                        soluta
+                        numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor
+                        at vero
+                        a iste?</p>
                 </article>
                 <article>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
-                    numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
-                    a iste?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae
+                        soluta
+                        numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor
+                        at vero
+                        a iste?</p>
                 </article>
-                    <article>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
-                        numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
+                <article>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae
+                        soluta
+                        numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor
+                        at vero
                         a iste?</p>
-                    </article>
-                    <article>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae soluta
-                        numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor at vero
+                </article>
+                <article>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae
+                        soluta
+                        numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor
+                        at vero
                         a iste?</p>
-                    </article>
+                </article>
                 </article>
             </section>
             <aside>
                 <!-- <input type="button" value="a" >
                             <input type="button" value="b"> -->
-                
+
                 <input type="radio" name="tab" id="first" checked> <!-- name으로 묶어야 하나만눌림 -->
                 <input type="radio" name="tab" id="second">
-                
-                <div class="labels">
-                    <label for="first">first</label> <!-- id를 first, lable에 for값에 first 주면 first글자클릭시 선택 --><label for="second">second</label>
-            
+
+                <div class="labels" >
+                    <label for="first" id="test1">first</label> <!-- id를 first, lable에 for값에 first 주면 first글자클릭시 선택 --><label
+                        for="second" id="test2">second</label>
+
                 </div>
                 <div class="items">
                     <div class="tab-item">
                         <ul>
-                            <li>html</li>
-                            <li>css</li>
-                            <li>js</li>
-                            <li>jquery</li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <img src="https://dummyimage.com/45/ccc/1523eb.jpg&text=hi">
+                                    </div>
+                                    <div>
+                                        <p>html5 canvas</p>
+                                        <p>20230623</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <img src="https://dummyimage.com/45/ccc/1523eb.jpg&text=hi">
+                                    </div>
+                                    <div>
+                                        <p>html5 canvas wdb</p>
+                                        <p>20230623</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <img src="https://dummyimage.com/45/ccc/1523eb.jpg&text=hi">
+                                    </div>
+                                    <div>
+                                        <p>html5 canvas</p>
+                                        <p>20230623</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <img src="https://dummyimage.com/45/ccc/1523eb.jpg&text=hi">
+                                    </div>
+                                    <div>
+                                        <p>html5 canvas</p>
+                                        <p>20230623</p>
+                                    </div>
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                     <div class="tab-item">
@@ -224,7 +318,7 @@
                     </div>
                 </div>
             </aside>
-            </div>
+        </div>
     </div>
     <div class="wrap footer">
         <footer>
@@ -233,6 +327,11 @@
                 a iste?</p>
         </footer>
     </div>
-    
+    <script>
+        var a1 = document.getElementById("test1").innerText;
+        alert(a1);      /* id가 test1인 태그의 text를 읽어주세요 */
+        document.getElementById("test1").innerHTML="<b>바!꿈!</b>";
+    </script>
 </body>
+
 </html>
