@@ -134,7 +134,6 @@
        /*  .wrap {
             box-sizing: border-box;
         } */
-
         .wrap.header {
             
             background-color: bisque;
@@ -182,6 +181,34 @@
             margin: 10px 10px 10px 0px;
         }
     </style>
+<!-- article 영역 -->
+    <style>
+/*          article#table_wrap table, article#table_wrap td {
+            width: 100%;
+        }
+        article#table_wrap th{
+            width: 20%;
+            padding: 5px 0;
+        }
+        article#table_wrap .table_content{
+            text-align: center;
+            height: 100px;
+        } */
+        article > #flex_wrap, article .flex-category {
+            width: 100%;
+            display: flex;
+        }
+        article > #flex_wrap > div{
+            width: 20%;
+            border: 1px solid black;
+            margin: 5px 3px;    /* 마진 아래 위 좌우 */
+        }
+        article > #flex_wrap > div img.default-img{
+            width: 100%;
+        }
+
+        
+    </style>
 </head>
 
 <body>
@@ -209,7 +236,29 @@
     <div class="wrap content">
         <div id="content">
             <section>
-                <article>
+                <article id="table_wrap">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>제목</th>
+                                <th>제목</th>
+                                <th>제목</th>
+                                <th>제목</th>
+                            </tr>
+                            <tr>
+                                <td><div><img src="https://dummyimage.com/45/ccc/1523eb.jpg&text=hi"></div><div>내용</div></td>
+                                <td><div><img src="https://dummyimage.com/45/ccc/1523eb.jpg&text=hi"></div><div>내용</div></td>
+                                <td><div><img src="https://dummyimage.com/45/ccc/1523eb.jpg&text=hi"></div><div>내용</div></td>
+                                <td><div><img src="https://dummyimage.com/45/ccc/1523eb.jpg&text=hi"></div><div>내용</div></td>
+                            </tr>
+                            <tr class="table_content">
+                                <td><div>내용</div></td>
+                                <td><div>내용</div></td>
+                                <td><div>내용</div></td>
+                                <td><div>내용</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae
                         soluta
                         numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor
@@ -217,6 +266,38 @@
                         a iste?</p>
                 </article>
                 <article>
+                    <div id="flex_wrap">
+                        <div>
+                            <div class="flex-title">제목</div>
+                            <div class="flex-img"><img src="//dummyimage.com/250/ccc/1523eb.jpg&text=hi" class="default-img"></div>
+                            <div class="flex-content">
+                                <div class="flex-category"><div>전통주</div><div>추천</div></div>
+                                <div class="flex-content-title"><div>전통주 오마카세에서 하는</div></div>
+                                <div class="flex-content-items"><div>클럽</div><div>.</div><div>강서구</div><div>.</div><div>2023-06-26</div><div>.</div>
+                                <div class="flex-content-follow"><div><img src="https://dummyimage.com/15/ccc/1523eb.jpg&text=hi"></div><div>6/8</div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex-title">제목</div>
+                            <div class="flex-img"><img src="//dummyimage.com/250/ccc/1523eb.jpg&text=hi" class="default-img"></div>
+                            <div class="flex-content">
+                                <div class="flex-category"><div>전통주</div><div>추천</div></div>
+                                <div class="flex-content-title"><div>전통주 오마카세에서 하는</div></div>
+                                <div class="flex-content-items"><div>클럽</div><div>.</div><div>강서구</div><div>.</div><div>2023-06-26</div><div>.</div>
+                                <div class="flex-content-follow"><div><img src="https://dummyimage.com/15/ccc/1523eb.jpg&text=hi"></div><div>6/8</div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex-title">제목</div>
+                            <div class="flex-img"><img src="//dummyimage.com/250/ccc/1523eb.jpg&text=hi" class="default-img"></div>
+                            <div class="flex-content">
+                                <div class="flex-category"><div>전통주</div><div>추천</div></div>
+                                <div class="flex-content-title"><div>전통주 오마카세에서 하는</div></div>
+                                <div class="flex-content-items"><div>클럽</div><div>.</div><div>강서구</div><div>.</div><div>2023-06-26</div><div>.</div>
+                                <div class="flex-content-follow"><div><img src="https://dummyimage.com/15/ccc/1523eb.jpg&text=hi"></div><div>6/8</div></div>
+                            </div>
+                        </div>
+                    </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur quia, vitae quae
                         soluta
                         numquam! Ipsa magnam officiis pariatur quam molestias excepturi voluptas, explicabo nihil dolor
@@ -328,9 +409,9 @@
         </footer>
     </div>
     <script>
-        var a1 = document.getElementById("test1").innerText;
-        alert(a1);      /* id가 test1인 태그의 text를 읽어주세요 */
-        document.getElementById("test1").innerHTML="<b>바!꿈!</b>";
+        /* var a1 = document.getElementById("test1").innerText;
+        alert(a1);    */   /* id가 test1인 태그의 text를 읽어주세요 */
+        /* document.getElementById("test1").innerHTML="<b>바!꿈!</b>"; */
     </script>
 </body>
 
