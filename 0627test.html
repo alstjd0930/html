@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    th {
+        background-color: rgb(231, 137, 103);
+    }
+</style>
+
+<body>
+    <form action="insert.no" method="post">
+        <fieldset>
+            <legend>공지사항 작성하기</legend>
+            <table id="col">
+                <tbody>
+                    <tr>
+                        <td>제목</td>
+                        <td><input size="38px" type="text" name="title" placeholder="제목을 입력하시오"></td>
+                    </tr>
+                    <tr>
+                        <td>내용</td>
+                        <td><textarea cols="40" rows="10" name="content" placeholder="내용을 입력하시오"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>첨부파일</td>
+                        <td><input type="file" name="uploadFile"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center;">
+                <button style="display: inline-block;">작성하기</button>
+            </div>
+        </fieldset>
+        <br>
+        <hr>
+        <br>
+        <table border="1" style="width: 900px;">
+            <tbody>
+                <div style="text-align: center;">
+                    <tr style="color: white;">
+                        <th>번호</th>
+                        <th colspan="6">제목</td>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </div>
+                    <tr style="background-color: rgb(245, 245, 163);">
+                        <td>9</td>
+                        <td colspan="5">공지사항 제목9</td>
+                        <td><butto>바로가기</button></td>
+                        <td>user01</td>
+                        <td>2021-03-29</td>
+                        <td>34</td>
+                    </tr>
+                    <tr style="background-color: rgb(245, 245, 163);">
+                        <td>9</td>
+                        <td colspan="5">공지사항 제목9</td>
+                        <td><button>바로가기</button></td>
+                        <td>user01</td>
+                        <td>2021-03-29</td>
+                        <td>34</td>
+                    </tr>
+                    <tr style="background-color: rgb(245, 245, 163);">
+                        <td>9</td>
+                        <td colspan="5">공지사항 제목9</td>
+                        <td><button>바로가기</button></td>
+                        <td>user01</td>
+                        <td>2021-03-29</td>
+                        <td>34</td>
+                    </tr>
+                    <tr style="background-color: rgb(245, 245, 163);">
+                        <td>9</td>
+                        <td colspan="5">공지사항 제목9</td>
+                        <td><button>바로가기</button></td>
+                        <td>user01</td>
+                        <td>2021-03-29</td>
+                        <td>34</td>
+                    </tr>
+                <tr style="color: white;">
+                    <th style="text-align: center;" colspan="8">전체공지사항 갯수</th>
+                    <th style="text-align: center;" colspan="2">5개</th>
+                </tr>
+            </tbody>
+        </table>
+</body>
+
+</html>
