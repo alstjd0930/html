@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="/0626_js/test.js"></script> -->
+</head>
+<body>
+    <h1 id="heading" class="c1">
+        내용
+    </h1>
+    <h1 class="c1 c2">내용 2</h1>
+    <script>
+        document.write("aaa");
+        document.write("bbb");
+        var heading = document.getElementById("heading");   //id가 heading인것
+        console.log(heading);
+        heading = document.querySelector("#heading");
+        console.log(heading);
+        heading = document.querySelector("h1"); 
+        console.log(heading);
+        heading = document.querySelectorAll(".c1"); 
+        console.log(heading);
+        heading = document.getElementsByClassName("c1") //class명이 c1인것
+        console.log(heading);
+
+        function abc(){
+            var aaa1 = 100;
+            return false;
+        }
+
+        console.log(typeof(abc)); //abc이름을 가진것의 자료형 = function
+        console.log(typeof(abc())); //abc의 함수 안에 리턴값의 자료형 = boolean
+
+        
+
+        var aaa =10;
+        var bbb ="십이요";
+        ccc = 5.7;      //기존 widow객체에 ccc멤버변수가 없었으므로 선언
+        ddd = "오점칠";
+        console.log(aaa);
+        console.log(bbb);
+        console.log(ccc);
+        console.log(ddd);
+        console.log(typeof(aaa));
+        console.log(typeof(bbb));
+        console.log(typeof(ccc));
+        console.log(typeof(ddd));
+        window.ccc ="값바꿈";   //ccc변수가 있었으므로 값만 바꿈
+        console.log(typeof(ccc));
+        //widow , location은 모든 widow 객체의 멤버들이므로 생략가능 
+        //객체에 없는 멤버변수를 작성하면 새로 선언
+        //기존 멤버변수명을 사용하면 기존 멤버변수에 값 활용
+
+        var ab2 = function(){
+            console.log("함수를 변수에 담음");
+        }
+        function ab3(){
+            console.log("함수 ab3를 만듬");
+        }          //둘이 똑같음
+
+        let f5= 10;
+        f5="값바꾸기 가능";
+
+        console.log(f5.length);
+        console.log(f5.charAt(2));
+        console.log(f5.split(" "));
+
+        var f6 = 10/0;
+        console.log(f6);
+        console.log(typeof(f6));
+
+        //형변환//
+        var f7 = 10;
+        var f8= "2";
+        f6= f7/f8;
+        console.log(f6);       //number = 5
+
+        f6="22";
+        console.log(typeof(f6));    //string
+        f6 =Number(f6);
+        console.log(typeof(f6));    //number
+        var f7="25";
+        var f8=25;
+        if(f7==f8){
+            console.log("f7==f8");
+        }else{
+            console.log("f7!=f8");
+        }
+        if(f7==f8){
+            console.log("f7===f8");  // >>> ===는 자료형 까지 같아야댐
+        }else{
+            console.log("f7!=f8");
+        }
+
+
+        var arr1 =new Array();
+        arr1[0] = "안녕"
+        arr1[1] = 30
+        arr1[2] = function(){};
+        console.log(arr1[0])
+
+        
+        // arr1=arr1.concat(arr2, arr3);
+        // console.log(arr1)
+    </script>
+</body>
+</html>
