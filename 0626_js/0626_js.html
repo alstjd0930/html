@@ -144,17 +144,37 @@
 
 
         console.log("====== 함수  ======")
-        function fu2(){
+        function fu2(nick , tit , cont){
             console.log("안녕")
             var obj3 =new Object();
-            obj3.k1 =10;
-            obj3.k2 =function(){
+            obj3.k1 =nick;
+            obj3.k2 =tit;
+            obj3.k3 =cont;
+            obj3.k4 =function(){
                 console.log("함수k2")
             }
             return obj3     //obj3에 해당하는 값을 리턴하고 함수종료 return 미작성시 148줄만 표시 obj3는 undefined
         }
-        console.log(fu2())
+        console.log(fu2("홍길동","제목","컨"));
+        var nana= fu2("나","기","다");
+        nana.k4();
 
+        delete(obj1.k4);    //해당 키값 삭제
+        console.log(obj1)
+
+
+        console.log("====== 배열  ======")
+        var arr5 = [10,20];
+        arr5[2] = nana;
+        arr5[3]  ={
+            k1 : 10,
+            k2 : "안녕"
+        }
+        console.log(arr5);
+        var obj4 = {k1:10 , k2:arr5}
+        console.log(obj4)
+
+    
     </script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../resources/css/reset.css" rel="stylesheet">
+</head>
+<body>
+    <button type="button" onclick="console.log('안녕');alert('경고')">버튼1</button>
+    <button type="button" id="btn-1" >버튼2</button> 
+    <button type="button" id="btn-2" >버튼3</button> 
+    <button type="button" onclick="btn2ClickHandler();" >버튼4</button> 
+    <!-- html에서 btn2ClickHandler사용시 ()붙여야됨 (js에선 붙이면 안됨) -->
+    <button type="button" id="btn-3" >버튼5</button> 
+    <button type="button" id="btn-4">버튼6</button> 
+    <script>
+        console.log("====== 이벤트 ======");
+
+        // 이벤트 설정 방법
+        // 1. 고전 이벤트 모델
+        // 2. 인라인 이벤트 모델 : html태그에 직접 걸어주는것 ex) <button onclick="함수명()">
+
+        var btn1 = document.getElementById("btn-1"); //btn1변수에 btn-1 id가진태그에 대한 공간만들어주기
+        console.log(btn1);
+        btn1.onclick = function(){
+            console.log("안녕")
+            console.log("안녕")
+            console.log("안녕")
+            console.log(this)   //this = boby안에 button 태그를 의미
+                                //html onclick 호출시 this=window , js onclick호출시 this=해당 버튼
+        }
+
+        //간단작성(익명함수)
+        document.getElementById("btn-1").onclick = function(){
+            console.log("안녕")
+            console.log("안녕")
+            console.log("안녕")
+        }
+
+        //함수명활용 작성   btn2ClickHandler함수안에 함수값 작성후 getElementById(bun-2)으로 oneclick시 함수실행
+        function btn2ClickHandler(){
+            console.log("안녕")
+            console.log("안녕")
+            console.log("ㅇㅇ")
+        }
+        document.getElementById("btn-2").onclick=btn2ClickHandler;  //callback함수
+       // document.getElementById("btn-1").onclick=btn1ClickHandler(); 버튼을 누르지않아도 적용됨 이렇게 작성x
+
+
+        
+       document.getElementById("btn-3").addEventListener("click",btn2ClickHandler);  //onclick속성명   addEventListener메소드명
+       document.getElementById("btn-4").addEventListener("click",function(){
+        console.log("btn-5클릭")
+        console.log(this)
+       });
+    </script>
+</body>
+</html>
