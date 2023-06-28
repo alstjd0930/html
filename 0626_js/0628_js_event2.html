@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1" class="c1">버튼1</button>
+    <button type="button" id="btn2" class="c1">버튼2</button>
+    <button type="button" id="btn3" class="c1 c2">버튼3</button>
+    <button type="button" id="btn4" class="c2">버튼4</button>
+    <button type="button" id="btn5" class="c2">버튼5</button>
+    <script>
+        var c1Elements = document.getElementsByClassName("c1");
+        console.log(c1Elements)
+        // c1Elements[0].onclick = c1Click;
+        // c1Elements[1].onclick = c1Click;
+        for(var i=0; i<c1Elements.length; i++){
+            c1Elements[i].addEventListener("click",c1Click)
+
+        }
+
+
+
+
+        var c2Elements =document.querySelectorAll(".c2");
+        for(var i=0 ; i<c2Elements.length; i++){
+            c2Elements[i].addEventListener("click",c2Click)
+        }
+
+
+
+        
+        function c1Click(){
+            console.log("c1 click")
+            console.log(this)
+        }
+        function c2Click(){
+            console.log("c2 click")
+            console.log(this)
+        }
+        function btnClick(){
+            console.log("btn click")
+            console.log(this)
+        }
+    </script>
+</body>
+</html>
