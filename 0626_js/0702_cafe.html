@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<style>
+    /* table 사이 간격 없애기 */
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+    } 
+</style>
+
+
+<script>
+    $(loadedHandler);
+    function loadedHandler(){
+        $('.c').on("blur",cntBlurHandler)
+        $("[type=botton]").on("click",)
+    }
+    //parent 부모요소 / childern 자식요소 / prev 왼쪽형제 / next 오른쪽
+    //.val() 선택한 양식의 값을 가져옴
+    //$(this) 이벤트가 발생한요소
+    function cntBlurHandler(){
+            console.log($(this))
+            var get = $(this).val();    //가격
+            var pr1 = $(this).parent().prev().text();   //수량
+             var pr2 = $(this).parent().next().children().attr("value", get * pr1); //합계
+    }
+
+    // .c 수량 = sum / p. 합계 = sum2   값을 저장할 변수 
+    // parseInt 입력받은값 int로 
+    function calcClickHandler(){
+            var sum = 0;
+            var sum2 = 0;
+
+            $(".c").each(function() {   
+                sum += parseInt($(this).val());
+            });
+
+
+            $(".p").each(function() {   
+                sum2 += parseInt($(this).val());
+            });
+            
+    }
+</script>
+<style>
+</style>
+<body>
+    <form>
+        <table border="1">
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+                <th>수량</th>
+                <th>합계</th>
+            </tr>
+            <tr>
+                <td>아메리카노</td>
+                <td>2500</td>
+                <td><input type="text" name="c1" id="c1" class="c"></td>
+                <td><input type="text" name="c1Price" id="c1Price" class="p" readonly></td>
+            </tr>
+            <tr>
+                <td>라떼</td>
+                <td>3000</td>
+                <td><input type="text" name="c2" id="c2" class="c"></td>
+                <td><input type="text" name="c2Price" id="c2Price" class="p" readonly></td>
+            </tr>
+            <tr>
+                <td>생강라떼</td>
+                <td>4500</td>
+                <td><input type="text" name="c3" id="c3" class="c"></td>
+                <td><input type="text" name="c3Price" id="c3Price" class="p" readonly></td>
+            </tr>
+            <tr>
+                <th>합계</th>
+                <th></th>
+                <th><input type="text" name="cTotalCnt" id="cTotalCnt" class="ca" readonly></th>
+                <th><input type="text" name="cTotalPrice" id="cTotalPrice" class="pa" readonly></th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <input type="button" value="계산하기" >
+                    <input type="reset" >
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
