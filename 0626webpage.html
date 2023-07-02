@@ -164,13 +164,13 @@
         height: 50px;
     }
     
-    article > #flex_wrap, article .flex-category,article .flex-content-items, article .flex-content-follow {
+    article > .flex_wrap, article .flex-category,article .flex-content-items, article .flex-content-follow {
         display: flex;
     }
-    article > #flex_wrap > div img.default-img{
+    article > .flex_wrap > div img.default-img{
         width: 100%;
     }
-    article > #flex_wrap > div{
+    article > .flex_wrap > div{
         border : 1px solid black;
         margin: 5px 3px;
     }
@@ -191,6 +191,7 @@
         text-decoration: none;
     }
 </style>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <!-- 반응형 -->
 <style>
     @media (min-width:1px){
@@ -279,7 +280,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita excepturi aut perspiciatis, similique quia inventore rerum assumenda possimus incidunt omnis illum tempora porro quaerat, eveniet iusto error fugit enim delectus!</p>
                 </article>
                 <article>
-                    <div id="flex_wrap">
+                    <div class="flex_wrap">
                         <div>
                             <div class="flex-title">제목1</div>
                             <div class="flex-img"><img src="https://dummyimage.com/250/ccc" class="default-img"></div>
@@ -314,16 +315,63 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita excepturi aut perspiciatis, similique quia inventore rerum assumenda possimus incidunt omnis illum tempora porro quaerat, eveniet iusto error fugit enim delectus!</p>
                 </article>
                 <article>
-                    <div class="mission_a"><h1><a>링크</a></h1></div>
+                    <div class="mission_a">
+                        <h1><a>링크</a></h1>
+                    </div>
                 </article>
                 <article>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita excepturi aut perspiciatis, similique quia inventore rerum assumenda possimus incidunt omnis illum tempora porro quaerat, eveniet iusto error fugit enim delectus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita excepturi aut perspiciatis, similique quia
+                        inventore rerum assumenda possimus incidunt omnis illum tempora porro quaerat, eveniet iusto error fugit enim
+                        delectus!</p>
                 </article>
                 <article>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita excepturi aut perspiciatis, similique quia inventore rerum assumenda possimus incidunt omnis illum tempora porro quaerat, eveniet iusto error fugit enim delectus!</p>
-                </article>
-            </section>
-            <aside>
+                    <div>
+                        <div class="flex_wrap">
+                            <div>
+                                <div class="flex-title">제목1</div>
+                                <div class="flex-img"><img src="https://dummyimage.com/250/ccc" class="default-img"></div>
+                                <div class="flex-content">
+                                    <div class="flex-category">
+                                        <div>전통주</div>
+                                        <div>추천</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" id="btnAdd" >더보기</button>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita excepturi aut perspiciatis, similique quia
+                        inventore rerum assumenda possimus incidunt omnis illum tempora porro quaerat, eveniet iusto error fugit enim
+                        delectus!</p>
+  <script>
+    function addDiv5(){
+        htmlVal +=`
+                    <div>
+                            <div class="flex-title">제목1</div>
+                            <div class="flex-img"><img src="https://dummyimage.com/250/ccc" class="default-img"></div>
+                            <div class="flex-content">
+                                <div class="flex-category"><div>전통주</div><div>추천</div>
+                            </div>
+                        </div>
+                        `;
+    }
+  </script>              
+<!-- <script>
+    $("#brnAdd").on("click",function(){
+        var htmlVal = "";
+        htmlVal +=`
+                    <div>
+                            <div class="flex-title">제목1</div>
+                            <div class="flex-img"><img src="https://dummyimage.com/250/ccc" class="default-img"></div>
+                            <div class="flex-content">
+                                <div class="flex-category"><div>전통주</div><div>추천</div>
+                            </div>
+                        </div>
+                        `;
+                        $(this).prev.
+    });
+</script>
+ -->                </article>
+                </section>
+                <aside>
 <!-- 
     <input type="button" value="a" onclick="a();">
     <input type="button" value="b">

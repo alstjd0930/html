@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        var element1 = $("#content");
+        console.log(element1)
+    </script>
+</head>
+<body>
+    <script>
+         jQuery(document).ready(function(){
+            console.log("ready 여기")
+         });
+
+         jQuery(function(){
+            console.log("ready 여기")
+         });
+
+         $(document).ready(function(){
+            console.log("ready 여기")
+         });
+
+         
+
+         $(function(){                  //$(string) > String 찾아라/ $(function(){}) > 행동후functiont실행
+            console.log("ready 여기")       
+         });
+
+        //ex>
+         $(loadedHandler);
+         function loadedHandler(){
+            console.log("loadedHandlert실행")
+         }
+
+
+        //onload /load : document가 모두 loading이 끝나면 발생하는 event
+        window.addEventListener("load" ,function(){
+            console.log("addEventListener 여기")
+        });
+        onload= function(){
+            console.log("여기load")
+            var element1 = $("#content");
+            console.log(element1)
+
+            //event 등록 코드
+            $("#btnAdd1").click(aHandler);
+            $("#btnAdd2").click(aHandler);
+            $("#btnAdd3").click(aHandler);
+            $("#btnAdd4").click(aHandler);
+            $("#btnAdd5").click(aHandler);
+        };
+            //event 핸들러 코드 onload와 다른 위치에
+        function aHandler(){
+                console.log("a호출")
+                var element1 = $("#content");
+                console.log(element1)
+            }
+
+        var element1 = $("#content");
+        console.log(element1)
+    </script>
+    <script>
+        $(loadedHandler);
+        function loadedHandler(){
+            $("#show1").on("click",function(){
+                $("#content1").show(2000);
+                $("#content2").hide(2000);
+                
+            })
+            $("#show2").on("click",function(){
+                $("#content2").show(2000);
+                $("#content1").hide(2000);
+                
+            })
+            $("#show2").on("click",function(){
+                $("#content2").show(2000);
+                $("#content1").hide(2000);
+                
+            })
+            $("#showhide").on("click",function(){
+                $("#content2,#content1").toggle(2000);
+                /* $("#content1").hide(2000); */
+                
+            })
+        }
+    </script>
+
+<button id="show1">보이기1</button>
+<button id="show1">보이기1</button>
+<button id="showhide">토글</button>
+
+    <div id="content1">
+        <ul class="menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li id="select">menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+            <li>menu6</li>
+        </ul>
+    </div>
+
+    <div id="content2">
+        <ul class="menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li id="select">menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+            <li>menu6</li>
+        </ul>
+    </div>
+
+
+    <button id="btnAdd">추가</button>
+
+
+
+
+</body>
+</html>

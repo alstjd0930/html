@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/0626_js/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <button type="button" id="btn1" class="c1">버튼1</button>
+    <button type="button" id="btn2" class="c1">버튼2</button>
+    <button type="button" id="btn3" class="c1 c2">버튼3</button>
+    <button type="button" id="btn4" class="c2">버튼4</button>
+    <button type="button" id="btn5" class="c2">버튼5</button>
+   
+    <button type="button" id="btn_add">버튼추가</button>
+    <button type="button" id="btn_del" >버튼삭제</button>
+    <!-- <div>안녕 js로 만들어진 노드 </div> -->
+
+
+
+<script>
+    document.getElementById('btn5').style.backgroundColor ="red";
+    $('#btn3').css("border-color","bule");
+    // document.querySelector("#btn_add").onclick =addbutton
+    // document.querySelector("#btn_del").onclick =del
+
+    $("#btn_add").on("click",jQaddbutton)
+    $("#btn_del").on("click",jQdel)
+
+    function jQaddbutton() {
+            console.log("jQbutton호출")
+            var div1 = document.createElement("div");
+            var htmlVal = "<div>안녕 js로 만들어진 노드 </div>"
+            $("boby").append(htmlVal)
+        }
+
+        function jQdel() {
+            console.log("jQdel호출")
+            var delElement = $("#btn4");
+            delElement.remove();
+        }
+</script>
+
+
+
+
+<script>
+    //화면의 elment 요소노드 및 text노드 추가 및 삭제
+    //마니 불편해서 jq로 대체할거임
+
+    // document.querySelector("#btn_add").onclick =addbutton
+    // document.querySelector("#btn_del").onclick =del
+
+    function addbutton(){  
+    var div1 = document.createElement("div");
+    var textnode1 = document.createTextNode("안녕 js로 만들어진 노드")
+    div1.appendChild(textnode1);    
+    document.body.appendChild(div1);    //자식노드로 추가
+    }
+
+    function del(){
+    var delElement = document.getElementById("btn4");
+    delElement.remove();
+    }
+
+
+
+</script>
+</body>
+</html>
