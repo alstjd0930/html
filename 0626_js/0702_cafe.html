@@ -26,13 +26,38 @@
     //$(this) 이벤트가 발생한요소
     function cntBlurHandler(){
             console.log($(this))
-            var get = $(this).val();    //가격
-            var pr1 = $(this).parent().prev().text();   //수량
-             var pr2 = $(this).parent().next().children().attr("value", get * pr1); //합계
-    }
+            var get = $(this).val();    //수량
+            var pr1 = $(this).parent().prev().text();   //가격  tr > td값의 text값
+            //var pr2 = $(this).parent().next().children().attr("value", get * pr1); //합계
+
+
+
+
+
+             $(this).parent().next().children('input.p').val(
+                $(this).val()
+                *
+                $(this).parent().prev().text()
+             )
+
+
+
+
+
+            //합계
+            $(".c").each(function(idx ,item){
+                // item = this
+                console.log(item);
+                sum += $(item).val()
+            })
+            $("#cTotalCnt").val();
+            $("#cTotalPrice").val();
+         }
 
     // .c 수량 = sum / p. 합계 = sum2   값을 저장할 변수 
     // parseInt 입력받은값 int로 
+
+
     function calcClickHandler(){
             var sum = 0;
             var sum2 = 0;
@@ -62,7 +87,7 @@
             <tr>
                 <td>아메리카노</td>
                 <td>2500</td>
-                <td><input type="text" name="c1" id="c1" class="c"></td>
+                <td><input type="text" name="c1" id="c1" class="c"></td>    //this
                 <td><input type="text" name="c1Price" id="c1Price" class="p" readonly></td>
             </tr>
             <tr>
