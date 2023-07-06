@@ -4,55 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
 <style>
-    th{
-        float: left;
-     
+    
+    .hint{
+        font-size: 0.7em;
     }
-
     input{
         width: 100%;
     }
     fieldset{
-        padding: 20px;
+        width: 440px;
+        height: 400px;
+        padding: 20px 10px ;
     }
+    button{
+        height: 60px;
+        background-color: rgb(142, 236, 142);
+        border: none;
+    }
+   td{
+    padding: 9px;
+   }
+   input{
+    border-bottom: dashed 2px black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+   }
+   .txt{
+    float: left;
+    font-size: 15px;
+   }
+   .hint{
+    visibility: hidden;
+   }
 </style>
+<script>
+	window.onload = loadedHandler;
+	function loadedHandler(){
+		$("[type=text]").click(inputClickHandler);
+		$("[type=password]").click(inputClickHandler);
+		$("[type=email]").click(inputClickHandler);
+	}
+	function inputClickHandler(e){
+		console.log($(this).parents("tr").next(".hint"));
+		
+		$(".hint").css("visibility", "hidden");
+		var $hintElement = $(this).parents("tr").next(".hint"); 
+		$hintElement.css("visibility", "visible");
+	}
+</script>
 <body>
-    <fieldset style="width: 400px;">
+    <fieldset>
         <table>
             <tr>
-                <th>아이디</th>
-                <td><input type="text" name="mid"></td>
+                <td class="txt">아이디</td>
+                <td><input type="text" name="mid" required></td>
             </tr>
             <tr class="hint">
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <th>패스워드</th>
+                <td class="txt">패스워드</td>
                 <td><input type="password" name="mpwd"></td>
             </tr>
             <tr class="hint">
                 <td></td>
-                <td>(영문자 대/소문자 특수문자, 숫자 포함 8 ~ 32자)</td>
+                <td>영문자 대/소문자 특수문자, 숫자 포함 8 ~ 32자</td>
             </tr>
             <tr>
-                <th>패스워드 확인</th>
+                <td class="txt">패스워드 확인</td>
                 <td><input type="password" name="mpwd"></td>
             </tr>
             <tr>
-                <th>이메일</th>
-                <td><input type="text" name="memail" style="width: 135px;">@<input type="text" style="width: 139px;"> </td>
+                <td class="txt">이메일</td>
+                <td><input type="text" name="memail" style="width: 130px;">@<input type="text" style="width: 145px;"> </td>
             </tr>
             <tr>
-                <th>주소</th>
+                <td class="txt">주소</td>
                 <td><input type="text" name="madress">
-                <br><input type="text" name="madress"></td>
+                <br><br><input type="text" name="madress"></td>
             </tr>
         </table>
         <br>
-        <button style="width: 100%;">가입</button>
+        <button style="width: 100%;"><strong style="font-size: 1.2em;">가 입</strong></button>
     </fieldset>
 </body>
 </html>
